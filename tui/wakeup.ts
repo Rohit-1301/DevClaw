@@ -1,7 +1,7 @@
 import {select, isCancel} from "@clack/prompts";
 import chalk from "chalk";
 import figlet from "figlet";
-
+import { runCLIMode } from "../modes/cli";
 
 const Banner_FONT='ANSI SHADOW';
 const SHADOW = chalk.hex('#5b4d9e');
@@ -47,7 +47,7 @@ export async function runWakeup() {
     }
 
     if(mode==="cli"){
-        console.log(chalk.dim("Starting in CLI......"));
+        await runCLIMode();
    }
     else if(mode==="telegram"){
         console.log(chalk.dim("Starting in Telegram......"));
